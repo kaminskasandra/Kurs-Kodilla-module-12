@@ -8,6 +8,6 @@ public class Application {
         FlightSearchEngine flightSearchEngine = new FlightSearchEngine(flightRegister.getFlightsSet());
         flightSearchEngine.searchFlightsByArrivalAirport("Warszawa");
         flightSearchEngine.searchFlightsByDepartureAirport("Wroclaw");
-        flightSearchEngine.searchFlightsByTransferCity("Gdańsk", "Katowice", "Warszawa");
+        flightSearchEngine.searchFlightsByTransferCity("Gdansk", "Katowice", "Warszawa");
     }
 }
