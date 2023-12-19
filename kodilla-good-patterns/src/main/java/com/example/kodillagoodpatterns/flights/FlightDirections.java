@@ -3,6 +3,7 @@ package com.example.kodillagoodpatterns.flights;
 public class FlightDirections {
 
     public static FlightRegister find() {
+
         Flight flight1 = new Flight("Wroclaw", "Warszawa");
         Flight flight2 = new Flight("Wroclaw", "Krakow");
         Flight flight3 = new Flight("Wroclaw", "Gdansk");
@@ -27,6 +28,5 @@ public class FlightDirections {
         flightRegister.getFlightsSet().add(flight10);
 
         return flightRegister;
-
     }
 }

@@ -1,5 +1,6 @@
 package com.example.kodillagoodpatterns.flights;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -25,13 +26,15 @@ public class FlightSearchEngine {
     }
 
     public void searchFlightsByTransferCity(String departureAirport, String transferAirport, String arrivalAirport) {
-        List<Flight> listOfFlightsWithTransfer = flightsSet.stream()
+        List<Flight> firstSegment = flightsSet.stream()
                 .filter(f -> f.getDepartureAirport().equals(departureAirport) && f.getArrivalAirport().equals(transferAirport))
                 .toList();
-        flightsSet.stream()
+        List<Flight> secondSegment = flightsSet.stream()
                 .filter(f -> f.getDepartureAirport().equals(transferAirport) && f.getArrivalAirport().equals(arrivalAirport))
-                .collect(Collectors.toList());
-        listOfFlightsWithTransfer.forEach(System.out::println);
-
+                .toList();
+        List<Flight> result = new ArrayList<>();
+        result.addAll(firstSegment);
+        result.addAll(secondSegment);
+        result.forEach(System.out::println);
     }
 }
